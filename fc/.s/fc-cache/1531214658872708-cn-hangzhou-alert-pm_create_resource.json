@@ -1,0 +1,9 @@
+{
+  "serviceName": "alert-pm",
+  "functionNames": [
+    "alert-pm/web"
+  ],
+  "domains": [
+    "web.alert-pm.1531214658872708.cn-hangzhou.fc.devsapp.net"
+  ]
+}

@@ -1,0 +1,24 @@
+version: '3.9'
+
+services:
+  alertpm:
+    build: .
+    image: alertpm
+    networks:
+      - shared
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.webstack-http.rule=Host(`alert.pm`)"
+      - "traefik.http.routers.webstack-http.entrypoints=web"
+      - "traefik.http.services.webstack-service.loadbalancer.server.port=80"
+      - "traefik.http.routers.webstack-https.rule=Host(`alert.pm`)"
+      - "traefik.http.routers.webstack-https.tls.certresolver=myresolver"
+      - "traefik.http.routers.webstack-https.entrypoints=websecure"
+        #- "traefik.http.services.webstack-https.loadbalancer.server.port=80"
+        #- "traefik.http.routers.webstack.middlewares=redirect-to-https" # 新增此行
+        #- "traefik.http.middlewares.redirect-to-https.redirectscheme.scheme=https" # 新增此行
+        #- "traefik.http.middlewares.redirect-to-https.redirectscheme.permanent=true" # 新增此行
+networks:
+  shared:
+    external: true
+    name: shared

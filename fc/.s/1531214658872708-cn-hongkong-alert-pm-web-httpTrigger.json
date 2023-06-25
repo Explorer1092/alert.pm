@@ -1,0 +1,26 @@
+{
+  "statefulConfig": {
+    "triggerName": "httpTrigger",
+    "description": "",
+    "triggerId": "e17e9941-f294-4760-910d-d703e3edef0c",
+    "sourceArn": null,
+    "triggerType": "http",
+    "invocationRole": null,
+    "qualifier": "LATEST",
+    "urlInternet": "https://web-alert-pm-qheshocrri.cn-hongkong.fcapp.run",
+    "urlIntranet": "https://web-alert-pm-qheshocrri.cn-hongkong-vpc.fcapp.run",
+    "triggerConfig": {
+      "methods": [
+        "POST",
+        "GET"
+      ],
+      "authType": "anonymous",
+      "disableURLInternet": false
+    },
+    "createdTime": "2023-06-12T11:28:31Z",
+    "lastModifiedTime": "2023-06-18T15:56:12Z",
+    "status": null,
+    "targetArn": null,
+    "name": "httpTrigger"
+  }
+}

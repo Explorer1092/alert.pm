@@ -1,0 +1,40 @@
+{
+  "statefulConfig": {
+    "functionId": "6d748540-6237-4085-8ffa-bc905021eeb0",
+    "functionName": "web",
+    "description": "Serverless Devs Web Framework Function",
+    "runtime": "python3.9",
+    "handler": "index.app",
+    "timeout": 60,
+    "initializer": "",
+    "initializationTimeout": 3,
+    "codeSize": 1764836,
+    "codeChecksum": "10354414330498509156",
+    "memorySize": 128,
+    "gpuMemorySize": null,
+    "environmentVariables": {},
+    "createdTime": "2023-06-12T11:28:30Z",
+    "lastModifiedTime": "2023-06-18T15:56:12Z",
+    "instanceConcurrency": 1,
+    "instanceSoftConcurrency": null,
+    "customContainerConfig": null,
+    "caPort": null,
+    "instanceType": "e1",
+    "layers": null,
+    "layersArnV2": null,
+    "instanceLifecycleConfig": {
+      "preFreeze": {
+        "handler": "",
+        "timeout": 3
+      },
+      "preStop": {
+        "handler": "",
+        "timeout": 3
+      }
+    },
+    "customDNS": null,
+    "customRuntimeConfig": null,
+    "customHealthCheckConfig": null,
+    "name": "web"
+  }
+}

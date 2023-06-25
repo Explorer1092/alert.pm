@@ -1,0 +1,40 @@
+{
+  "domainName": "web.alert-pm.1531214658872708.cn-hongkong.fc.devsapp.net",
+  "accountId": "1531214658872708",
+  "protocol": "HTTP",
+  "certConfig": {
+    "certName": null,
+    "privateKey": null,
+    "certificate": null
+  },
+  "tlsConfig": {
+    "minVersion": null,
+    "maxVersion": null,
+    "cipherSuites": null
+  },
+  "apiVersion": "2016-08-15",
+  "routeConfig": {
+    "routes": [
+      {
+        "path": "/*",
+        "accountId": null,
+        "serviceName": "alert-pm",
+        "functionName": "web",
+        "qualifier": null,
+        "methods": [
+          "POST",
+          "GET"
+        ],
+        "rewriteConfig": null,
+        "innerRewriteConfig": null
+      }
+    ]
+  },
+  "createdTime": "2023-06-12T11:28:33Z",
+  "lastModifiedTime": "2023-06-18T15:56:14Z",
+  "keepFullPath": null,
+  "subdomainCount": null,
+  "wafConfig": {
+    "enableWAF": false
+  }
+}

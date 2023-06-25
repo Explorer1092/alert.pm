@@ -1,0 +1,1 @@
+s deploy -a bnzm5270
