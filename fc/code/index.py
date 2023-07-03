@@ -68,7 +68,7 @@ def send_dingtalk_msg(msg, userid_list):
     return resp_data
 
 
-
+@app.route('/gitlab/build', methods=['POST'])
 @app.route('/work/gitlab/build', methods=['POST'])
 def work_gitlab_build():
     project_name = request.form.get('CI_PROJECT_NAME')
@@ -87,6 +87,13 @@ def personal_github_build():
     # 在这里处理你的逻辑
     return send_dingtalk_msg(f'repo_name {repo_name}，last_commit {last_commit}', 'manager7827') # 给我自己发消息
 
+
+@app.route('/work/scanner', methods=['POST'])
+def work_scanner():
+    msg = request.form.get('msg')
+    # 在这里处理你的逻辑
+
+    return send_dingtalk_msg(msg, 'manager7827') # 给我自己发消息
 
 
 if __name__ == "__main__":
