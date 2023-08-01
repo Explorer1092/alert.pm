@@ -16,13 +16,29 @@ def index():
 </head>
 <body>
 <div class="website">
-    <div class="ri-t">
+
+    <code>
         /gitlab/build/
         /work/gitlab/build/
         /work/scanner
         /github/build/
-        curl -X POST -d "msg=hello" http://alert.pm/me
-    </div>
+    </code>
+
+    <code>
+            curl -X POST -d "msg=hello" http://alert.pm/me
+    </code>
+
+    <code>
+    notify:
+    stage: notify
+    image: dockerproxy.com/curlimages/curl:latest
+    script:
+        - curl -X POST -d "CI_PROJECT_NAME=${CI_PROJECT_NAME}&CI_JOB_ID=${CI_JOB_ID}&GITLAB_USER_LOGIN=${GITLAB_USER_LOGIN}" https://alert.pm/work/gitlab/build
+    only:
+        - branches
+        - tags
+    </code>
+
 </div>
 </body>
 </html>
