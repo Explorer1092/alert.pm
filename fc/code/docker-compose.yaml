@@ -18,6 +18,8 @@ services:
         #- "traefik.http.routers.webstack.middlewares=redirect-to-https" # 新增此行
         #- "traefik.http.middlewares.redirect-to-https.redirectscheme.scheme=https" # 新增此行
         #- "traefik.http.middlewares.redirect-to-https.redirectscheme.permanent=true" # 新增此行
+    volumes:
+      - ./index.py:/home/code/index.py
 networks:
   shared:
     external: true
