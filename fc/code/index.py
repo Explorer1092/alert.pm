@@ -13,33 +13,41 @@ def index():
     return '''<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <script src="https://cdn.jsdelivr.net/npm/showdown@1.9.1/dist/showdown.min.js"></script>
 </head>
 <body>
 <div class="website">
 
-    <code>
+    <div id="output">
+
+    </div>
+
+</div>
+    <script>
+    const converter = new showdown.Converter();
+    const markdownText = `
+        ## url
         /gitlab/build/
         /work/gitlab/build/
         /work/scanner
         /github/build/
-    </code>
 
-    <code>
-            curl -X POST -d "msg=hello" http://alert.pm/me
-    </code>
+        ## post msg
+        curl -X POST -d "msg=hello" http://alert.pm/me
 
-    <code>
-    notify:
-    stage: notify
-    image: dockerproxy.com/curlimages/curl:latest
-    script:
-        - curl -X POST -d "CI_PROJECT_NAME=${CI_PROJECT_NAME}&CI_JOB_ID=${CI_JOB_ID}&GITLAB_USER_LOGIN=${GITLAB_USER_LOGIN}" https://alert.pm/work/gitlab/build
-    only:
-        - branches
-        - tags
-    </code>
-
-</div>
+        ## gitlab
+        notify:
+        stage: notify
+        image: dockerproxy.com/curlimages/curl:latest
+        script:
+            - curl -X POST -d "CI_PROJECT_NAME=$${'{CI_PROJECT_NAME}'}&CI_JOB_ID=$${'{CI_JOB_ID}'}&GITLAB_USER_LOGIN=$${'{GITLAB_USER_LOGIN}'}" https://alert.pm/work/gitlab/build
+        only:
+            - branches
+            - tags
+    `;
+    const htmlText = converter.makeHtml(markdownText);
+    document.getElementById("output").innerHTML = htmlText;
+    </script>
 </body>
 </html>
 '''
